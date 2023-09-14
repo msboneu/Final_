@@ -1,0 +1,13 @@
+.grid_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 10px;
+  justify-items: center;
+  max-width: 1440px;
+  margin: auto;
+}
+
+.findings_section {
+  max-width: 1440px;
+  margin: auto;
+}

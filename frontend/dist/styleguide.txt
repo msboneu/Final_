@@ -1,0 +1,14 @@
+Nomad Travel Style guide
+
+Colors
+
+#020024 — (Almost black) dark blue 
+#090979 — Dark blue 
+#00d4ff — Cyan 
+#f2f2f2 — Light gray
+#ffffff — White
+
+
+Fonts
+
+Arima madurai (Regular, extra bold)

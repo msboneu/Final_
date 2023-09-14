@@ -1,0 +1,25 @@
+.rating .stars .star {
+  padding: 5px 2px;
+  cursor: pointer;
+}
+
+.star {
+  text-decoration: none;
+}
+
+.rating .stars .star:before {
+  font-family: "FontAwesome";
+  content: "\f005";
+  color: #fff7af;
+  font-size: 20px;
+}
+
+.rating .stars .star:hover:before,
+.rating .stars .star.to_rate:before,
+.rating .stars .star.rated:before {
+  color: #ffe600;
+}
+
+.rating .stars .star.no_to_rate:before {
+  color: #fff7af;
+}

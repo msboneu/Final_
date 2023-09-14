@@ -1,0 +1,18 @@
+.regular_button {
+  background-color: #090979;
+  border-radius: 30px;
+  border-style: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  outline: none;
+  padding: 14px 20px;
+  text-transform: uppercase;
+  transition: all 0.1s;
+}
+
+.regular_button:hover,
+.regular_button:focus {
+  background-color: rgba(9, 9, 121, 0.8);
+}

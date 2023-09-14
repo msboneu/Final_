@@ -1,0 +1,45 @@
+  .categories {
+    display: flex;
+    flex-flow: row wrap;
+    width: 90%;
+    max-width: 1440px;
+    margin: 24px auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .categories_h2 {
+    margin: 14px 0px;
+    text-align: left;
+  }
+
+  .category_section {
+    display: flex;
+    width: 100%;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    margin: 14px auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  .left {
+    position: absolute;
+    left: 0;
+    top: 54%;
+    transform: translateY(-50%);
+  }
+
+  .right {
+    position: absolute;
+    right: 0;
+    top: 54%;
+    transform: translateY(-50%);
+  }
+
+  .btn_all_categories {
+    margin: auto;
+    border: none;
+    background-color: transparent;
+    text-decoration: none;
+  }

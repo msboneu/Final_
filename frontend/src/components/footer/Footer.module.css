@@ -1,0 +1,22 @@
+footer {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nomad_travel_info {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.nomad_travel_info img {
+  height: 30px;
+  margin-right: 10px;
+}
+
+.nomad_travel_info span {
+  font-size: 14px;
+}

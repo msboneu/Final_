@@ -1,0 +1,189 @@
+.login {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: calc(
+    calc(100vh - 90px - 70px)
+  ); /* Altura igual a la altura de la ventana menos la altura del footer */
+}
+
+.login .container {
+  background: none;
+  box-shadow: none;
+  border-radius: 8px;
+  align-items: center;
+}
+
+.login .container > div {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login .card {
+  border: none;
+}
+
+.login .card1 {
+  width: 50%;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  padding: 20px;
+}
+
+.login .card2 {
+  width: 50%;
+  background: rgba(0, 212, 255, 1);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  /* logo solo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login .card2 div h1,
+.login .card2 div p {
+  color: #090979;
+}
+
+.login .btn-color {
+  border-radius: 50px;
+  color: #fff;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 33%,
+    rgba(0, 212, 255, 1) 99%
+  );
+  padding: 15px;
+  cursor: pointer;
+  border: none !important;
+  transition: all 0.2s;
+}
+
+.login .btn-color:hover {
+  color: #fff;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 212, 255, 1) 0%,
+    rgba(9, 9, 121, 1) 33%,
+    rgba(2, 0, 36, 1) 99%
+  );
+}
+
+.login .btn-white {
+  border-radius: 50px;
+  color: #090979;
+  background-color: #fff;
+  padding: 8px 40px;
+  cursor: pointer;
+  border: 2px solid #090979 !important;
+  transition: all 0.2s;
+}
+
+.login .btn-white:hover {
+  color: #fff;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 33%,
+    rgba(0, 212, 255, 1) 99%
+  );
+}
+
+.login a {
+  color: #000;
+}
+
+.login a:hover {
+  color: #000;
+}
+
+.login .bottom {
+  width: 100%;
+  margin-top: 50px !important;
+}
+
+.login .sm-text {
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+
+.login .sinup-options a {
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: 800;
+  color: #090979;
+  transition: 0.2s;
+}
+
+.login .sinup-options a:hover {
+  color: #00d4ff;
+  text-decoration: underline;
+}
+
+.login #logo {
+  width: 410px;
+  height: 390px;
+}
+
+.login .form-group {
+  margin: 10px 0;
+}
+
+.login .btn {
+  margin: 10px;
+}
+
+.login .form-control-label {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.login .form-group {
+  margin-top: 15px;
+}
+
+@media screen and (max-width: 992px) {
+  .login .card1 {
+    width: 100%;
+
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding: 40px 30px 10px 30px;
+  }
+
+  .login .card2 {
+    width: 100%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .login .right {
+    margin-top: 100px !important;
+    margin-bottom: 100px !important;
+  }
+
+  .login #logo {
+    width: 230px;
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .login .container {
+    padding: 10px !important;
+  }
+
+  .login .card2 {
+    padding: 50px;
+  }
+
+  .login.right {
+    margin-top: 50px !important;
+    margin-bottom: 50px !important;
+  }
+}

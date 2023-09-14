@@ -1,0 +1,6 @@
+.register {
+  min-height: calc(100vh - 90px - 70px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

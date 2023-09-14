@@ -1,0 +1,71 @@
+.category_hero {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    border-radius: 0;
+    margin: auto;
+    padding: 24px;
+    background-image: url('https://rp-cms.imgix.net/wp-content/uploads/Colorful-Amazonian-Sunset-469930430_6016x4016.jpeg');
+    background-position: bottom;
+    text-align: center;
+    color: #020024;
+}
+
+.category_hero_filters {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 64%;
+}
+
+.category_filters {
+    width: 90%;
+    margin: 14px auto;
+}
+
+.list_group_item {
+  width: 100%;
+}
+
+.category_name_list_group {
+  max-width: 70%;
+  overflow: clip;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.category_filters_container_side_pills {
+  max-width: 30%;
+  background: #020024;
+  overflow: clip;
+  cursor: pointer;
+}
+
+h4 {
+  margin: 14px 0;
+}
+
+.category_filter_grid {
+  margin: auto;
+}
+
+.category_filter_grid_header {
+  margin: 14px auto;
+  text-align: center;
+  width: 64%;
+}
+
+@media (min-width: 992px) {
+    .category_hero_filters {
+      display: none;
+    }
+    .category_hero {
+      color: white;
+    }
+  }
+
+  @media (min-width: 0px) and (max-width: 991px) {
+    .category_filters_container_side {
+      display: none;
+    }
+  }

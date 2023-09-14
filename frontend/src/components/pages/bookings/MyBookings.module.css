@@ -1,0 +1,15 @@
+.booking_cards {
+    width: 64%;
+}
+
+.no_bookings {
+    margin: 14px auto;
+    text-align: center;
+    width: 44%;
+}
+
+@media (max-width: 992px) {
+    .no_bookings {
+        width: 74%;
+    }
+  }

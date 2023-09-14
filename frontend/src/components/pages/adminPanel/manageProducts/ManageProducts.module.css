@@ -1,0 +1,21 @@
+.info {
+  padding: 30px;
+}
+
+.delete_modal {
+  z-index: 99999999999;
+}
+
+.table_list table td {
+  max-width: 150px;
+  min-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.delete_toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}

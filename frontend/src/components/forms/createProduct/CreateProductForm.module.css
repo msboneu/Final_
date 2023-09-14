@@ -1,0 +1,67 @@
+.create_product_container {
+  background: #fafafa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-top: 30px;
+}
+
+.form_tagline {
+  background: #072c90;
+  color: #ffffff;
+  padding: 30px;
+  text-align: left;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+}
+
+.form_content {
+  padding: 40px;
+}
+
+.form_group {
+  margin-top: 15px;
+}
+
+.form_label {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.form_submit_button {
+  margin-top: 15px;
+  text-align: right;
+}
+
+.btn_create {
+  background-color: #090979;
+  border-radius: 30px;
+  border-style: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  outline: none;
+  padding: 14px 20px;
+  text-transform: uppercase;
+  transition: all 0.1s;
+}
+
+.is_invalid {
+  border-color: #dc3545 !important;
+}
+
+.invalid_feedback {
+  color: #dc3545;
+  font-size: 14px;
+}
+
+.btn_add_category {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.btn_add_category button {
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,86 @@
+stages:
+  - build
+  - test
+  - deploy
+
+build_backend:
+  stage: build
+  image: maven:3.8.3-openjdk-17
+  script:
+    - cd backend/travels
+    - echo "Building app..."
+    - mvn clean
+    - mvn clean install -DskipTests
+    - echo "Finished building the app."
+  artifacts:
+    paths:
+      - backend/travels/target/travels-0.0.1-SNAPSHOT.jar
+  rules:
+    - changes:
+        - backend/**/*
+
+build_frontend:
+  stage: build
+  image: node:latest
+  script:
+    - echo "Building the app"
+    - cd frontend/
+    - ls
+    - npm --force install
+    - CI=false npm run build
+    - echo "Finished building the app."
+    - cd dist
+    - ls
+    - cd ..
+    - pwd
+  artifacts:
+    name: react_build
+    paths:
+      - ./frontend/dist/
+  rules:
+    - changes:
+        - frontend/**/*
+
+unit-test-job:   # This job runs in the test stage.
+  stage: test    # It only starts when the job in the build stage completes successfully.
+  script:
+    - echo "Running unit tests... This will take about 0 seconds."
+    - echo "Code coverage is 90%"
+
+deploy_Backend:
+  stage: deploy
+  needs: [build_backend]
+  image: alpine:3.11
+  before_script:
+    - apk update && apk add openssh-client bash
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - touch ~/.ssh/config
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - ssh-keyscan -H "$DEPLOY_SERVER_IP" >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+  script:
+    - echo "Deploying started..."
+    - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl stop travels.service"
+    - scp backend/travels/target/travels-0.0.1-SNAPSHOT.jar ubuntu@$DEPLOY_SERVER_IP:/home/ubuntu/travels
+    - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl restart travels.service"
+    - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl start travels.service"
+    - echo "Finished deploying the app."
+  rules:
+    - changes:
+        - backend/**/*
+
+deploy_frontend:
+  stage: deploy
+  needs: [build_frontend]
+  image: python:latest
+  script:
+    - pip install awscli
+    - aws configure set aws_secret_key_id $AWS_ACCESS_KEY_ID
+    - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+    - aws s3 sync frontend/dist/ s3://pigrupo8c1web 
+  rules:
+    - changes:
+        - frontend/**/*

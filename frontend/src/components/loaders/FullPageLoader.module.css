@@ -1,0 +1,6 @@
+.spinner_container {
+  height: calc(100vh - 106px - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
